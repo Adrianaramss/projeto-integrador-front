@@ -1,8 +1,8 @@
+import { Router } from './routes'
+
 const App = () => {
     return (
-        <div>
-            <h1>aeeeeeeee</h1>
-        </div>
+      <Router/>
     )
 }
 export default App;
