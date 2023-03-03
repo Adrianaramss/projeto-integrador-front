@@ -1,16 +1,12 @@
 import {TextoSignup} from "../signup/style"
-import logoheader from "../../assets/logo-signup.png"
-import { Header,Input,Button,Texto } from "../signup/style"
-
+// import logoheader from "../../assets/logo-signup.png"
+import { Input,Button,Texto } from "../signup/style"
+import { Header } from "../../Components/header"
 export const SignupPage = () => {
     return(
         <>
-        <Header> 
-        <div>
-            <img src={logoheader}></img>
-            <h2>Entrar</h2>
-        </div>
-        </Header>
+    <Header/> 
+
      <TextoSignup>  
     Olá, boas vindas ao LabEddit ;)
     </TextoSignup> 
@@ -21,7 +17,7 @@ export const SignupPage = () => {
     <Texto>
         <div>
       <p>Ao continuar, você concorda com o nosso
-         Contrato de usuário e nossa Política de Privacidade <br/> </p>
+      <span className="textocolorido">  Contrato de usuário </span> e nossa <span className="textocolorido"> Política de Privacidade </span> <br/> </p>
          <br/>
          <p> <input type="checkbox"></input> Eu concordo em receber emails sobre coisas legais <br/> no LabEddit  </p>
      </div>

@@ -1,5 +1,16 @@
+import Header from "../../Components/header"
+import {InputPostagem, ButtonPostar} from "../feed/styled"
+import { Div } from "../login/style"
+
 export const FeedPage = () => {
     return(
-    <h1>Feed</h1>
+        <>
+        <Header/>
+        <InputPostagem  placeholder="Escreva seu post.."/>
+        <ButtonPostar>Postar</ButtonPostar>
+        <Div/>
+
+  
+    </>
     )
 }

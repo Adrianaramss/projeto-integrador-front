@@ -6,6 +6,7 @@ import {Input,Button, ButtonConta, Div} from "./style"
 export const LoginPage = () => {
     return(
         <>
+        
     <Container>
     <div>
         <img src={logo}></img>
