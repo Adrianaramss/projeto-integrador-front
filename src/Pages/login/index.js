@@ -17,7 +17,9 @@ export const LoginPage = () => {
         <Input  placeholder="Senha"/>
 
        <Button>Continuar</Button>
+       
        <Div></Div>
+       
        <ButtonConta>Crie uma conta!</ButtonConta>
     </>
     )

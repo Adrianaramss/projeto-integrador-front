@@ -76,9 +76,7 @@ flex: none;
 order: 0;
 flex-grow: 0;
 background-color: white;
-margin-bottom: 10%;
-
-
+margin-top: 5%;
 
 `
 
@@ -87,10 +85,12 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+margin: 0 auto;
 height: 1px;
 background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
 border: none;
-margin: 20px;
-
+margin-top: 20px;
+width: 335.01px;
+align-items: center;
 
 `
