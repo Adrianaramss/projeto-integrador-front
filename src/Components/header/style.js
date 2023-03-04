@@ -31,7 +31,7 @@ h2{
     line-height: 25px;
     color: #4088CB;
     justify-content: flex-end;
-    margin-left: 135px;
+    margin-left: 115px;
     margin-bottom: 50x;
     
 }

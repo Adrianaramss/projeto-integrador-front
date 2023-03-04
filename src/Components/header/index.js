@@ -1,18 +1,30 @@
 import { HeaderStyled } from "./style"
 import logoheader from "../../assets/logo-signup.png"
+import { goToLoginPage } from "../../routes/coordinator";
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
 
-    
+
+    const location = useLocation();
+
+    const navigate = useNavigate();
 
 
     
     return(
         <HeaderStyled> 
+         <img src={logoheader}></img>   
         <div>
-            <img src={logoheader}></img>
-            
-            <h2>Entrar</h2>
+            {location.pathname === "/signup"?
+           
+            <h2 onClick={()=>goToLoginPage(navigate)}>Entrar</h2>
+            :
+            <h2 onClick={()=>goToLoginPage(navigate)}>Logout</h2>
+
+             }
+                 
         </div>
         </HeaderStyled>
 
