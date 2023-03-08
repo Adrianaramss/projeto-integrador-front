@@ -1,16 +1,13 @@
-import CardPost from "../../Components/cardpost"
+import CreatePost from "../../Components/createpost"
 import Header from "../../Components/header"
-import {InputPostagem, ButtonPostar} from "../feed/styled"
-import { Div } from "../login/style"
-
+import Card from "../../Components/cardpost"
 export const FeedPage = () => {
     return(
         <>
         <Header/>
-        <InputPostagem  placeholder="Escreva seu post.."/>
-        <ButtonPostar>Postar</ButtonPostar>
-        <Div/>
-        <CardPost/>
+        <CreatePost/>
+        <Card/>
+        
 
   
     </>
