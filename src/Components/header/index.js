@@ -14,6 +14,7 @@ export const Header = () => {
 
     
     return(
+       
         <HeaderStyled> 
          <img src={logoheader}></img>   
         <div>
