@@ -41,7 +41,9 @@ export const LoginPage = () => {
       // alert("Verifique se você tem cadastro ")
 
   } catch (error) {
-      console.log(error)
+      console.error(error?.response?.data);
+      window.alert(error?.response?.data)
+
   }
 }
 

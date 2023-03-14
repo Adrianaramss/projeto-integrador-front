@@ -40,7 +40,6 @@ margin-bottom: 12px;
 }
 
 h2{
-margin-left: 10px ;
 width: 132px;
 height: 16px;
 font-family: 'IBM Plex Sans';

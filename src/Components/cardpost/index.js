@@ -2,21 +2,30 @@ import { CardPost} from "./style"
 import like from "../../assets/Like.png"
 import dislike from "../../assets/dislike.png"
 import comentario from "../../assets/comentario.png"
+import { useContext,useState } from "react"
+import { GlobalContext } from "../../context/GlobalContext"
+import axios from "axios"
+export const Card = (props) => {
+    const { postagem } = props;
 
-export const Card = () => {
+  
+   
+    
+
+
+
+
 
     
     return(
         <CardPost> 
             <div>
-          
-           <h2>Enviado por: labaluno83</h2>
-           <p>Por que a maioria dos desenvolvedores 
-            usam Linux? ou as empresas de tecnologia usam Linux?  </p>
+           <h2>Enviado por:{props.postagem.creator.nickname} </h2>
+           <p>{props.postagem.content} </p>
            
            <div>
             <span className="likeedislike">
-                <img src={like} alt= "like"/>
+                <img src={like}  alt= "like"/>
                 1.2K
                 <img src={dislike} alt= "dislike"/>
             </span>
