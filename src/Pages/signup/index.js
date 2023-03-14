@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import axios from "axios"
 import { goToFeedPage } from "../../routes/coordinator"
+
+
 export const SignupPage = () => {
 
     const navigate = useNavigate();
@@ -43,7 +45,6 @@ export const SignupPage = () => {
   }
 }
   
-
 
     return(
         <>
