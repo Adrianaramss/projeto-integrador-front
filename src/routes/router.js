@@ -2,7 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
     LoginPage,
     SignupPage,
-    FeedPage
+    FeedPage,
+    Comments
  
 
 } from "../Pages"
@@ -13,7 +14,7 @@ export const Router = () => {
                 <Route path="/" element={<LoginPage />} />
                 <Route path="/signup" element={<SignupPage />} />
                 <Route path="/feed" element={<FeedPage />} />
-                
+                <Route path="/comments" element={<Comments/>} />
             </Routes>
         </BrowserRouter>
     )
