@@ -1,4 +1,4 @@
-// import CreatePost from "../../Components/createpost"
+import CreatePost from "../../Components/createpost"
 import Header from "../../Components/header"
 import Card from "../../Components/cardpost"
 import { useNavigate } from "react-router-dom"
@@ -12,73 +12,73 @@ import { Div } from "../login/style"
 
 
 export const FeedPage = () => {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
-  const context = useContext(GlobalContext);
-  const { postagem, fetchPostagem } = context;
-  const [isLoading, setIsLoading] = useState(false)
+    const context = useContext(GlobalContext);
+    const { postagem, fetchPostagem } = context;
+    const [isLoading, setIsLoading] = useState(false)
 
-  const [postContent, setPostContent] = useState("")
-
-  useEffect(() => {
-    const token = window.localStorage.getItem(`teste`);
-
-    if (!token) {
-      goToFeedPage(navigate);
-    } else {
-      fetchPostagem();
-    }
-  }, []);
-
-  const createPostagem = async (e) => {
-      e.preventDefault()
-      setIsLoading(true)
-
-
-    try {
+    const [postContent, setPostContent] = useState("")
+  
+    useEffect(() => {
       const token = window.localStorage.getItem(`teste`);
-
-      const config = {
-        headers: {
-          Authorization: token
-        }
-      };
-
-      const body = {
-          content: postContent
-        }
   
-   await axios.post(`${process.env.REACT_APP_BASE_URL}/posts`,body,config);
-
-      setPostContent("");
-      setIsLoading(false)
-      fetchPostagem()
-    } catch (error) {
-      console.error(error?.response?.data);
-      window.alert(error?.response?.data)
-    }
-  };
-
+      if (!token) {
+        goToFeedPage(navigate);
+      } else {
+        fetchPostagem();
+      }
+    }, []);
+  
+    const createPostagem = async (e) => {
+        e.preventDefault()
+        setIsLoading(true)
 
   
-  return(
-      <>
-      <Header/>
-      {/* <CreatePost/> */}
-      <StylePost>
-     <form onSubmit={createPostagem}>
-        <section>
-          <input value={postContent} onChange={(e) => setPostContent(e.target.value)}  placeholder="Escreva seu post.."  />
-        </section>
-        <button disabled={isLoading}>Postar</button>
-        </form>
-      <Div/>
-      </StylePost>
-      {postagem.map((postagem) => {
-        return <Card key={postagem.id} postagem={postagem} />;
-      })}
-   
+      try {
+        const token = window.localStorage.getItem(`teste`);
 
-  </>
-  )
+        const config = {
+          headers: {
+            Authorization: token
+          }
+        };
+  
+        const body = {
+            content: postContent
+          }
+    
+     await axios.post(`${process.env.REACT_APP_BASE_URL}/posts`,body,config);
+  
+        setPostContent("");
+        setIsLoading(false)
+        fetchPostagem()
+      } catch (error) {
+        console.error(error?.response?.data);
+        window.alert(error?.response?.data)
+      }
+    };
+  
+
+    
+    return(
+        <>
+        <Header/>
+        {/* <CreatePost/> */}
+        <StylePost>
+       <form onSubmit={createPostagem}>
+          <section>
+            <input value={postContent} onChange={(e) => setPostContent(e.target.value)}  placeholder="Escreva seu post.."  />
+          </section>
+          <button disabled={isLoading}>Postar</button>
+          </form>
+        <Div/>
+        </StylePost>
+        {postagem.map((postagem) => {
+          return <Card key={postagem.id} postagem={postagem} />;
+        })}
+     
+  
+    </>
+    )
 }

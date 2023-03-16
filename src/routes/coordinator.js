@@ -10,3 +10,6 @@ export const goToFeedPage = (navigator) => {
     navigator('/feed')
 }
 
+export const goToPostComments = (navigator) => {
+    navigator('/comments')
+}

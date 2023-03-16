@@ -5,9 +5,12 @@ import comentario from "../../assets/comentario.png"
 import { useContext,useState } from "react"
 import { GlobalContext } from "../../context/GlobalContext"
 import axios from "axios"
-
+import { goToPostComments } from "../../routes/coordinator"
+import { useNavigate } from "react-router-dom"
 
 export const Card = (props) => {
+  const navigate = useNavigate();
+
     const { postagem } = props;
     const context = useContext(GlobalContext);
     const { fetchPostagem } = context;
@@ -56,7 +59,7 @@ export const Card = (props) => {
             </span>
               
             <span className="comentario">
-                <img src={comentario} alt= "comentario"/>
+                <img src={comentario} onClick={()=> goToPostComments(navigate)}  alt= "comentario"/>
                 54
 
             </span>
