@@ -11,7 +11,6 @@ const GlobalStyle = createGlobalStyle`
   
   }
 `;
-
 const App = () => {
   const [postagem, setPostagem] = useState([]);
 
