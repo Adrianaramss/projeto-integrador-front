@@ -58,8 +58,8 @@ export const LoginPage = () => {
     </div>
     </Container>
 
-        <Input name="email"  value={form.email} onChange={changeForm} />
-        <Input name="password" value={form.password} onChange={changeForm} type={"password"}
+        <Input name="email"  value={form.email} onChange={changeForm}  placeholder="E-mail"/>
+        <Input name="password" value={form.password} onChange={changeForm} type={"password"}  placeholder="password"
   />
 
        <Button onClick={()=>login()}>Continuar</Button>
