@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import axios from "axios"
 import { goToFeedPage } from "../../routes/coordinator"
+import { BASE_URL } from "../../constants/BASE_URL"
 
 
 export const SignupPage = () => {
@@ -33,8 +34,8 @@ export const SignupPage = () => {
           password: form.password
         };
   
-        const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/users/signup`,body);
-        window.localStorage.setItem(`teste`, response.data.token);
+        const response = await axios.post(`${BASE_URL}/users/signup`,body);
+        window.localStorage.setItem("labeedi-token", response.data.token);
   
         if(response.data.token !== undefined){
           goToFeedPage(navigate)

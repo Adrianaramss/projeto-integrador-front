@@ -8,6 +8,7 @@ import { goToFeedPage } from "../../routes/coordinator"
 import { StylePost } from "./styled"
 import axios from "axios"
 import { Div } from "../login/style"
+import { BASE_URL, TOKEN_NAME } from "../../constants/BASE_URL"
 
 
 
@@ -21,7 +22,7 @@ export const FeedPage = () => {
     const [postContent, setPostContent] = useState("")
   
     useEffect(() => {
-      const token = window.localStorage.getItem(`teste`);
+      const token = window.localStorage.getItem("labeedi-token");
   
       if (!token) {
         goToFeedPage(navigate);
@@ -36,7 +37,7 @@ export const FeedPage = () => {
 
   
       try {
-        const token = window.localStorage.getItem(`teste`);
+        const token = window.localStorage.getItem("labeedi-token");
 
         const config = {
           headers: {
@@ -48,7 +49,7 @@ export const FeedPage = () => {
             content: postContent
           }
     
-     await axios.post(`${process.env.REACT_APP_BASE_URL}/posts`,body,config);
+     await axios.post(`${BASE_URL}/posts`,body,config);
   
         setPostContent("");
         setIsLoading(false)
