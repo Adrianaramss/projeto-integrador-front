@@ -4,10 +4,10 @@ o LabEdit é uma rede social com o objetivo de promover a conexão e interação
 
 ## Funcionalidade
 
-✅ Login 
-✅ Signup 
-✅ Feed 
-⚠️ Like e comentarios sendo implementandos 
+✅ Login <br>
+✅ Signup <br>
+✅ Feed <br>
+⚠️ Like e comentarios sendo implementandos <br>
 
 ## Layout
 Layout a ser seguido pelo figma  em Mobile First
