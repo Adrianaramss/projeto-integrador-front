@@ -7,6 +7,7 @@ import { GlobalContext } from "../../context/GlobalContext"
 import axios from "axios"
 import { goToPostComments } from "../../routes/coordinator"
 import { useNavigate } from "react-router-dom"
+import { BASE_URL } from "../../constants/BASE_URL"
 
 export const Card = (props) => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ export const Card = (props) => {
       setIsLoading(true)
   
       try {
-        const token = window.localStorage.getItem(`teste`);
+        const token = window.localStorage.getItem("labeedi-token");
   
         const config = {
           headers: {
@@ -33,7 +34,7 @@ export const Card = (props) => {
           like: true
         }
   
-       await axios.put(`${process.env.REACT_APP_BASE_URL}/posts/${postagem.id}/like`,body,config);
+       await axios.put(BASE_URL + `/posts/${postagem.id}/like`,body,config);
 
         setIsLoading(false)
         fetchPostagem()

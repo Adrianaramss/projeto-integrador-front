@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
 import { GlobalContext } from './context/GlobalContext';
+import { BASE_URL } from './constants/BASE_URL';
 const GlobalStyle = createGlobalStyle`
   *{
     padding: 0;
@@ -15,7 +16,7 @@ const App = () => {
   const [postagem, setPostagem] = useState([]);
 
   useEffect(() => {
-    const token = window.localStorage.getItem(`teste`);
+    const token = window.localStorage.getItem("labeedi-token");
 
     if (token) {
       fetchPostagem();
@@ -24,7 +25,7 @@ const App = () => {
 
   const fetchPostagem = async () => {
     try {
-      const token = window.localStorage.getItem(`teste`);
+      const token = window.localStorage.getItem("labeedi-token");
 
       const config = {
         headers: {
@@ -32,7 +33,7 @@ const App = () => {
         }
       };
 
-      const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/posts`,config);
+      const response = await axios.get(`${BASE_URL}/posts`,config);
 
       setPostagem(response.data);
     } catch (error) {

@@ -32,8 +32,8 @@ export const LoginPage = () => {
           password: form.password
         };
   
-        const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/users/login`,body);
-        window.localStorage.setItem(`teste`, response.data.token);
+        const response = await axios.post(`${BASE_URL}/users/login`,body);
+        window.localStorage.setItem("labeedi-token", response.data.token);
   
         if(response.data.token !== undefined){
           goToFeedPage(navigate)
