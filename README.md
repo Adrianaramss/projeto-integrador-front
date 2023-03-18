@@ -2,7 +2,7 @@
 O projeto labEdit é um projeto full stack que é divido em dois repositorios um com a parte de back-end e esse que tem a parte de front-end. <br>
 o LabEdit é uma rede social com o objetivo de promover a conexão e interação entre pessoas. Quem se cadastrar no aplicativo poderá criar, curtir publicações e comentar. 
 
-## Funcionalidade
+## Funcionalidades
 
 ✅ Login <br>
 ✅ Signup <br>
@@ -24,8 +24,6 @@ Layout a ser seguido pelo figma  em Mobile First
 - integração de API com Axios
 - React Router
 - React Context
-- Integração com APIs
-- Axios
 
 ## Link
 - vercel
