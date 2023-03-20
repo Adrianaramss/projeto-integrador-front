@@ -1,10 +1,9 @@
-import { Navigate } from "react-router-dom"
 import logo from "../../assets/logolabenu.png"
-import { goToFeedPage, goToLoginPage, goToSignupPage } from "../../routes/coordinator"
+import { goToFeedPage, goToSignupPage } from "../../routes/coordinator"
 import {Container} from "./style"
 import {Input,Button, ButtonConta, Div} from "./style"
 import { useNavigate } from "react-router-dom"
-import { BASE_URL,TOKEN_NAME } from "../../constants/BASE_URL"
+import { BASE_URL} from "../../constants/BASE_URL"
 import axios from "axios"
 import { useState } from "react"
 
@@ -12,6 +11,7 @@ import { useState } from "react"
 export const LoginPage = () => {
 
     const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(false);
 
 
     const [form, setForm] = useState({
@@ -27,6 +27,8 @@ export const LoginPage = () => {
     const login = async () => {
     
       try {
+        setIsLoading(true);
+
         const body = {
           email: form.email,
           password: form.password
@@ -35,12 +37,15 @@ export const LoginPage = () => {
         const response = await axios.post(`${BASE_URL}/users/login`,body);
         window.localStorage.setItem("labeedi-token", response.data.token);
   
-        if(response.data.token !== undefined){
+        setIsLoading(false);
+
           goToFeedPage(navigate)
-      } 
+      
       // alert("Verifique se você tem cadastro ")
 
   } catch (error) {
+    setIsLoading(false);
+
       console.error(error?.response?.data);
       window.alert(error?.response?.data)
 
@@ -53,7 +58,7 @@ export const LoginPage = () => {
         
     <Container>
     <div>
-        <img src={logo}></img>
+        <img src={logo} className="logo"></img>
         <p>O projeto de rede social da Labenu</p>  
     </div>
     </Container>
