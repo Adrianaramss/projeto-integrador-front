@@ -11,7 +11,7 @@ o LabEdit é uma rede social com o objetivo de promover a conexão e interação
 ⚠️ Comentarios sendo implementandos <br>
 
 ## Layout
-Layout a ser seguido pelo figma  em Mobile First
+- Layout a ser seguido pelo figma  em Mobile First
 ![image](https://user-images.githubusercontent.com/111310311/226139787-f4ecf6fb-9440-4815-92f6-924c1c5d7f5f.png)
 
 
