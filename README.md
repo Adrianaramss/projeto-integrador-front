@@ -29,7 +29,7 @@ o LabEdit é uma rede social com o objetivo de promover a conexão e interação
 
 ## Link
 - vercel
-[LabEdit](https://projeto-integrador-labedit-hatwxqukf-adrianaramss.vercel.app/)
+[LabEdit](https://projeto-integrador-labedit-is7v51bm8-adrianaramss.vercel.app/)
 
 - Repositório Back-end
 [LabEdit-Back](https://github.com/Adrianaramss/projeto-integrador-back-end)
