@@ -1,5 +1,5 @@
 import { CardPost} from "./style"
-import dislike from "../../assets/dislike.png"
+import dislike1 from "../../assets/dislike.png"
 import like1 from "../../assets/Like.png"
 import comentario from "../../assets/comentario.png"
 import { useContext,useState } from "react"
@@ -44,7 +44,35 @@ export const Card = (props) => {
       }
     };
   
+
+    const dislike = async () => {
+      setIsLoading(true)
   
+      try {
+        const token = window.localStorage.getItem("labeedi-token");
+  
+        const config = {
+          headers: {
+            Authorization: token
+          }
+        };
+  
+        const body = {
+          like: false
+        }
+  
+       await axios.put(BASE_URL + `/posts/${postagem.id}/like`,body,config);
+
+        setIsLoading(false)
+        fetchPostagem()
+      } catch (error) {
+        console.error(error?.response?.data);
+        window.alert(error?.response?.data)
+      }
+    };
+  
+
+
 
     return(
         <CardPost> 
@@ -55,12 +83,13 @@ export const Card = (props) => {
            <div>
             <span className="likeedislike" >
                 <img  src={like1}  onClick={()=>like(postagem.id)} style={{ cursor: "pointer" }}   alt= "like"/>
-                {" "}   {postagem.likes}
-                <img src={dislike} alt= "dislike"/>
+                {" "}   {postagem.likes}   
+                <img src={dislike1} alt= "dislike" onClick={()=>dislike(postagem.id)}  style={{ cursor: "pointer" }}  />
+              
             </span>
               
             <span className="comentario">
-                <img src={comentario} onClick={()=> goToPostComments(navigate)}  alt= "comentario"/>
+                <img src={comentario} onClick={()=> goToPostComments(navigate)} style={{ cursor: "pointer" }} alt= "comentario"/>
                 54
 
             </span>

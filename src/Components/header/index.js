@@ -20,9 +20,9 @@ export const Header = () => {
         <div>
             {location.pathname === "/signup"?
            
-            <h2 onClick={()=>goToLoginPage(navigate)}>Entrar</h2>
+            <h2 onClick={()=>goToLoginPage(navigate)}  style={{ cursor: "pointer" }} >Entrar</h2>
             :
-            <h2 onClick={()=>goToLoginPage(navigate)}>Logout</h2>
+            <h2 onClick={()=>goToLoginPage(navigate)} style={{ cursor: "pointer" }} >Logout</h2>
 
              }
                  
