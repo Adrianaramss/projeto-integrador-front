@@ -1,4 +1,3 @@
-import CreatePost from "../../Components/createpost"
 import Header from "../../Components/header"
 import Card from "../../Components/cardpost"
 import { useNavigate } from "react-router-dom"
@@ -8,7 +7,7 @@ import { goToFeedPage } from "../../routes/coordinator"
 import { StylePost } from "./styled"
 import axios from "axios"
 import { Div } from "../login/style"
-import { BASE_URL, TOKEN_NAME } from "../../constants/BASE_URL"
+import { BASE_URL } from "../../constants/BASE_URL"
 
 
 
