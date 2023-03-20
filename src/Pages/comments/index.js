@@ -11,7 +11,6 @@ export const Comments = () =>{
     const navigate = useNavigate();
 
     const context = useContext(GlobalContext)
-    const { postagem, fetchPostagem } = context;
 
     return(
         <>
